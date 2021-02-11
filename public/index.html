@@ -7,28 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="responseDiv">
-      <div>
-        <input
-          id="inputName"
-          type="text"
-          placeholder="Enter your Name"
-          required
-          autocomplete="off"
-        />
+    <form id="form" action="/response" method="post">
+      <div class="responseDiv">
+        <div>
+          <input
+            id="inputName"
+            type="text"
+            placeholder="Enter your Name"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <textarea
+            id="responseMsg"
+            placeholder="Enter your response message"
+            required
+            autocomplete="off"
+          ></textarea>
+        </div>
+        <div>
+          <input id="submit" type="submit" value="Submit" />
+        </div>
       </div>
-      <div>
-        <textarea
-          id="responseMsg"
-          placeholder="Enter your response message"
-          required
-          autocomplete="off"
-        ></textarea>
-      </div>
-      <div>
-        <button id="sendBtn">Send</button>
-      </div>
-    </div>
+    </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/client.js"></script>

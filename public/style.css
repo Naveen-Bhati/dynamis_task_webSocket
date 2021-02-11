@@ -1,7 +1,7 @@
 .responseDiv {
   height: 30vh;
   width: 30vw;
-
+  margin: 30vh auto;
   display: flex;
   flex-direction: column;
 }
@@ -19,6 +19,8 @@ input,
 textarea {
   padding-left: 20px;
 }
-button {
+#submit {
+  padding-left: 0;
   background-color: blueviolet;
+  color: white;
 }

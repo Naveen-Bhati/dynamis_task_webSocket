@@ -5,13 +5,17 @@ socket.on("Hello", (welcomeMsg) => {
 });
 
 const input = document.getElementById("inputName");
-const sendBtn = document.getElementById("sendBtn");
+const form = document.getElementById("form");
 const responseMsg = document.getElementById("responseMsg");
 
-sendBtn.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   socket.emit("response", {
     id: socket.id,
     name: input.value,
     responseMsg: responseMsg.value,
   });
+  input.disabled = "disabled";
+  responseMsg.disabled = "disabled";
+  submit.disabled = "disabled";
 });
