@@ -3,13 +3,15 @@ const socketio = require("socket.io");
 const path = require("path");
 const http = require("http");
 const Response = require("./database/response");
+const dotenv = require("dotenv");
 
 const app = express();
 const server = http.createServer(app);
 
 const publicDirPath = path.join(__dirname, "../public");
 app.use(express.static(publicDirPath));
-const port = process.env.port || 8000;
+dotenv.config();
+const port = process.env.PROD_PORT || process.env.DEV_PORT;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 const io = socketio(server);
